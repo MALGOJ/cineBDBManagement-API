@@ -1,5 +1,4 @@
 # cineBDBManagement-API
-# cineBDBManagement-API
 
 ## Descripción
 
@@ -9,7 +8,7 @@
 
 Antes de ejecutar la aplicación, asegúrate de tener instalados los siguientes componentes:
 
-- [Java 21](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) o superior
+- [Java 21](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) 
 - [Maven 3.6.3](https://maven.apache.org/download.cgi) o superior
 - [MySQL](https://dev.mysql.com/downloads/installer/) (o cualquier otra base de datos compatible)
 
