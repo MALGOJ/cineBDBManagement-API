@@ -10,6 +10,7 @@ import com.example.cineBDB_managment.repository.crud.ReservationCrudRepository;
 import com.example.cineBDB_managment.repository.crud.RoomCrudRepository;
 import com.example.cineBDB_managment.repository.inter.ReservationRepositoryInterface;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -45,11 +46,12 @@ public class ReservationService implements ReservationRepositoryInterface {
         return reservationMapper.toReservationDto(reservation);
     }
 
-    @Override
+    @Transactional(readOnly = true)
     public List<ReservationDto> getAllReservations() {
         List<Reservation> reservations = reservationCrudRepository.findAll();
-        if (reservations.isEmpty()) {
-            throw new RuntimeException("No se encontraron reservas");
+        // Inicializar la colección perezosa
+        for (Reservation reservation : reservations) {
+            reservation.getSelectedSeats().size();
         }
         return reservationMapper.toReservationDto(reservations);
     }

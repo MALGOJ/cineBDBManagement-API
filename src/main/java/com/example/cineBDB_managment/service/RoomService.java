@@ -6,6 +6,7 @@ import com.example.cineBDB_managment.model.mapper.RoomMapper;
 import com.example.cineBDB_managment.repository.crud.RoomCrudRepository;
 import com.example.cineBDB_managment.repository.inter.RoomRepositoryInterface;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,7 +31,7 @@ public class RoomService implements RoomRepositoryInterface {
                 .orElseThrow(() -> new RuntimeException("Sala no encontrada"));
         return roomMapper.toRoomDto(room);
     }
-
+    @Transactional(readOnly = true)
     @Override
     public List<RoomDto> getAllRooms() {
         List<Room> rooms = roomCrudRepository.findAll();
