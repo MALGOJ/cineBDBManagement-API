@@ -60,3 +60,4 @@ Antes de ejecutar la aplicación, asegúrate de tener instalados los siguientes 
 ## Documentación de la API
 
 La documentación de la API está disponible en Swagger. Una vez que la aplicación esté en ejecución, puedes acceder a la documentación en:
+http://localhost:8081/swagger-ui.html
